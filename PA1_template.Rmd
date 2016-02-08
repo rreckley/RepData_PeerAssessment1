@@ -7,7 +7,7 @@ output: html_document
 
 
 ## Loading and preprocessing the data
-The first step is to include the necessary libraries and idenitfy the location of the data file to be read in.
+The first step is to include the necessary libraries and identify the location of the data file to be read in.
 The data is read in via the read.csv function.
 ```{r}
 library(ggplot2)
@@ -97,12 +97,12 @@ max_interval <- avg_daily[which.max(avg_daily$AverageSteps),]
 print(max_interval)
 ```
 
-The maximum number of steps observered across all days occurs at interval 835 with an average of 206.1698 steps.
+The maximum number of steps observed across all days occurs at interval 835 with an average of 206.1698 steps.
 
 ## Imputing missing values
 
 ```{r, echo=FALSE}
-print(paste("The total number of missing values in the actvity data set is ", sum(is.na(activity_data))))
+print(paste("The total number of missing values in the activity data set is ", sum(is.na(activity_data))))
 ```
 
 ```{r}
@@ -140,10 +140,10 @@ print(paste("The median number of steps taken per day after imputing the missing
 
 ```
 #### What is the impact of imputing missing data on the estimates of the total daily number of steps?
-  If the observations with missing data are included when calculating the mean and median, imputing the data has a significant impact on the calculation of the mean and meadian. In this instance, the mean increases from 
-9354 to 10766. The median inceases from 10395 to 10766.
+  If the observations with missing data are included when calculating the mean and median, imputing the data has a significant impact on the calculation of the mean and median. In this instance, the mean increases from 
+9354 to 10766. The median increases from 10395 to 10766.
 
-  If the observastions with missing data are exluded from calculating the mean and median, imputing the data has no impact. The mean and median generated approximately the same. 
+  If the observations with missing data are excluded from calculating the mean and median, imputing the data has no impact. The mean and median generated approximately the same. 
 
 
 
@@ -174,8 +174,8 @@ plot4 <- xyplot(steps_taken_by_day$AvgSteps ~ steps_taken_by_day$interval | step
 print(plot4)
 ```
 
-   When examing the graph of the weekend and weekday activtiy, several distinct patterns emerge. 
+   When examining the graph of the weekend and weekday activity, several distinct patterns emerge. 
  First, the weekdays has the peak or largest average number of steps is observed. Here the peak occurs during 
- the morning and drops off significantly duing the middle of the day. Minor peaks of activity are observered during the early afternoon and evening hours of a weekday. With the weekend, the activity peak occurs during the same interval, but the average number of steps observered during this period is less. Unlike weekday's, there is more activity occured observered after the initial peak. The weekend activity appears to spread out during the majority of the day.
+ the morning and drops off significantly during the middle of the day. Minor peaks of activity are observed during the early afternoon and evening hours of a weekday. With the weekend, the activity peak occurs during the same interval, but the average number of steps observed during this period is less. Unlike weekday's, there is more activity observed after the initial peak. The weekend activity appears to spread out during the majority of the day.
 
 
