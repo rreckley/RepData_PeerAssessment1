@@ -44,6 +44,7 @@ plot1 <- plot1 + geom_bar(stat = "identity") +
      labs(title = "Histogram of Total Number of Steps Taken Each Day\n with missing values removed", x = "Date", y = "Total number of steps")
 print(plot1)
 ```
+![plot1](figures/plot1.png) 
 
 ```{r}
 sum_data <- aggregate(activity_data$steps, by=list(activity_data$date), FUN=sum, na.rm=TRUE)
@@ -89,6 +90,8 @@ plot2 <- ggplot(avg_daily, aes(x=interval, y=AverageSteps)) +
 print(plot2)
 
 ```
+![plot2](figures/plot2.png) 
+
 
 Which 5-minute interval, on average across all the days in the dataset, contains the maximum number of steps?
 
@@ -125,6 +128,7 @@ plot3 <- plot3 + geom_bar(stat = "identity") +
 print(plot3)
 
 ```
+![plot3](figures/plot3.png) 
 
 ```{r}
 imputed_steps_taken <- aggregate(imputed_activity$steps, by=list(imputed_activity$date), FUN=sum)
@@ -173,6 +177,8 @@ plot4 <- xyplot(steps_taken_by_day$AvgSteps ~ steps_taken_by_day$interval | step
                 xlab = "Interval", ylab = "Average Number of steps")
 print(plot4)
 ```
+
+![plot4](figures/plot4.png) 
 
    When examining the graph of the weekend and weekday activity, several distinct patterns emerge. 
  First, the weekdays has the peak or largest average number of steps is observed. Here the peak occurs during 
